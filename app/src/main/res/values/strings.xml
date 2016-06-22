@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidSpinnerExample</string>
+    <string name="action_settings">Settings</string>
+    <string name="a">Algorithm Cracking</string>
+    <string name="b">Application Development</string>
+    <string name="c">Web Development</string>
+    <string name="d">System Administration</string>
+    <string name="title_activity_display_message">My Message</string>
+</resources>
