@@ -121,34 +121,14 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
     public void Submit(View view) {
         EditText usernameEditText = (EditText) findViewById(R.id.name);
         EditText rollnumberEditText = (EditText) findViewById(R.id.number);
-        CheckBox checkBox = (CheckBox) findViewById(R.id.profile1);
-        boolean checked = ((CheckBox) view).isChecked();
-
-        //To check if profiles have been chosen
-        switch(view.getId()) {
-            case R.id.profile1:
-                if (!checked);
-
-                else
-                    break;
-            case R.id.profile2:
-                if (!checked);
-
-                else
-                    break;
-            case R.id.profile3:
-                if (!checked);
-
-                else
-                    break;
-            case R.id.profile4:
-                if (!checked);
-
-                else
-                    break;
-            default:
-                Toast.makeText(checkBox.getContext(),"Please choose a profile",Toast.LENGTH_SHORT).show();
-        }
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.profile1);
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.profile2);
+        CheckBox checkBox3 = (CheckBox) findViewById(R.id.profile3);
+        CheckBox checkBox4 = (CheckBox) findViewById(R.id.profile4);
+        boolean checked1 = checkBox1.isChecked();
+        boolean checked2 = checkBox2.isChecked();
+        boolean checked3 = checkBox3.isChecked();
+        boolean checked4 = checkBox4.isChecked();
 
         //To check if Name is empty
         if (isEmpty(usernameEditText)) {
@@ -161,12 +141,14 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
             Toast.makeText(rollnumberEditText.getContext(), "Please fill in Roll Number ", Toast.LENGTH_LONG).show();
             return;
         }
+
+        //To check if profile is empty
+        else if(!checked1 && !checked2 && !checked3 && !checked4)
+            Toast.makeText(checkBox4.getContext(),"Please choose at least one profile",Toast.LENGTH_SHORT).show();
+
         //To start new Activity
        else {
             Intent intent = new Intent(this, DisplayMessageActivity.class);
-            TextView editText = (TextView) findViewById(R.id.edit_message);
-            String message = editText.getText().toString();
-            intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         }
 
